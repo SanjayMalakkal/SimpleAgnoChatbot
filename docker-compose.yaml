@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  gpbot:
+    build: .
+    container_name: gpbot
+    ports:
+      - "2096:2096"
+    env_file:
+      - .env
+    volumes:
+      - ./app:/app/app
+    restart: unless-stopped
+
